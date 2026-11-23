@@ -179,6 +179,10 @@ header div>a {
     font-weight: bold;
 }
 
+
+
+
+
 /* Hide events mobile */
 
 
@@ -235,7 +239,146 @@ header div>a {
     color: #3434c6;
 }
 
+/** Set up learning section **/
+/* code added for desktop */
+.learning {
+    grid-column: full-start / full-end;
+    background-color: #eaebec;
+    padding: 2rem 4.5rem; 
+}
+.learning > h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem; 
+}
 
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem; 
+}
+
+.learning-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.learning-card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.learning-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 1rem 1rem 1.5rem; 
+    overflow-wrap: break-word;
+}
+
+.learning-card-body h3 {
+    font-size: 1.25rem;
+}
+
+.learning-card-body p.learning-label {
+    margin-top: 0.5rem; 
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.learning-card-body p:last-child {
+    margin-top: 0.5rem; 
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+/** Setup thesis section **/
+
+.thesis {
+    grid-column: full-start / full-end;
+    padding: 2rem 1.5rem; 
+}
+
+.thesis > h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.thesis-content {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr; 
+    gap: 1.5rem; 
+    align-items: start;
+}
+
+.thesis-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.thesis-main > video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem; 
+}
+
+.thesis-main .thesis-text h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.thesis-main .thesis-text p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-bottom: 2rem; 
+}
+
+.thesis-list {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.thesis-list .thesis-block {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.thesis-list .thesis-block:first-child {
+    background-color: #d8d8d8;
+}
+
+.thesis-list img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thesis-list .thesis-text {
+    min-width: 0;
+}
+
+.thesis-list .thesis-text h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.thesis-list .thesis-text p {
+    font-size: 0.875rem;
+    line-height: 1.35;
+}
 
 
 
@@ -385,7 +528,98 @@ footer>ul>li>a {
         font-size: x-small;
     }
 }
+  /** Set up the learning section for mobile **/
+@media screen and (max-width: 40rem){
+    section.learning {
+        grid-column: full-start / full-end; 
+        padding: 2rem 1rem 2rem 1rem; 
+        background-color: #fff;
+    }
 
+    section.learning > h2 {
+        font-size: 2rem;
+        text-align: center;
+        color: #484848;
+        margin: 0 0 1rem 0; 
+    }
+
+    section.learning > .learning-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; 
+    }
+
+    /* Remove elements from the learning section on mobile */
+
+    section.learning > .learning-grid > .learning-card > img,
+    section.learning > .learning-grid > .learning-card > .learning-card-body > p {
+        display: none;
+    }
+
+    section.learning > .learning-grid > .learning-card {
+        background-color: #d8d8d8;
+        padding: 1rem 1rem 1.5rem 1rem;
+        margin: 0;
+    }
+
+    section.learning > .learning-grid > .learning-card > .learning-card-body {
+        padding: 0;
+        margin: 0;
+    }
+
+    section.learning > .learning-grid > .learning-card > .learning-card-body > h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #484848;
+    }
+
+    /** Set up the learning section for mobile */
+
+    section.thesis {
+        display: block;
+        grid-template-columns: 1fr;
+        padding: 2rem 0 1.5rem 0; 
+        color: #484848;
+    }
+
+    /* Remove the elements from thesis section for mobile */
+
+    section.thesis .thesis-list,
+    section.thesis .thesis-text,
+    section.thesis .thesis-block {
+        display: none;
+    }
+
+    section.thesis > div,
+    section.thesis .thesis-main,
+    section.thesis .thesis-video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
+        grid-column: 1 / -1;
+        padding: 0;
+        margin: 0;
+    }
+
+    section.thesis > h2 {
+        display: block;
+        text-align: center;
+        margin: 0 0 1rem 0; 
+    }
+
+    section.thesis video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+       
+}
 
 /* *********************** */
 /** End of Mobile Section **/
